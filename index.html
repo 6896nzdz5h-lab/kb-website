@@ -51,12 +51,30 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:#7e8590;font-size:1
 
 @media(max-width:760px){.links{display:none;position:absolute;top:76px;left:0;right:0;padding:22px 20px 26px;background:#0b0c0f;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}.links.open{display:flex}.nav-cta{display:none}.menu{display:block}.hero{min-height:590px}.hero-inner{padding:80px 0}.hero:after{right:-10%;top:70%;font-size:250px}.lead{font-size:15px}.hero-note{gap:12px;flex-wrap:wrap}.section-head{display:block}.section-head p{margin-top:16px}.grid{grid-template-columns:1fr}.roster-groups{grid-template-columns:1fr}.player-list{grid-template-columns:repeat(2,minmax(0,1fr))}.recruit-card{grid-column:auto}.tile{min-height:180px}.about-grid{grid-template-columns:1fr;gap:28px}.apply-shell{grid-template-columns:1fr;gap:25px}.apply-intro{position:static}.statrow{gap:7px}.stat strong{font-size:22px}.faq-list{grid-template-columns:1fr}section{padding:70px 0}.foot{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+.nav-dropdown{position:relative;color:#c7cbd2;font-size:13px;font-weight:700}
+.nav-dropdown summary{list-style:none;cursor:pointer}
+.nav-dropdown summary::-webkit-details-marker{display:none}
+.nav-dropdown summary:after{content:"⌄";margin-left:7px;color:var(--red2)}
+.dropdown-menu{position:absolute;top:28px;left:-14px;min-width:210px;padding:8px;background:#111317;border:1px solid var(--line);box-shadow:0 14px 35px rgba(0,0,0,.4);display:grid;gap:2px}
+.dropdown-menu a{padding:11px 12px;color:#dce0e7;font-size:11px}
+.dropdown-menu a:hover{background:#1b1e25;color:white}
+.page-hero{padding:76px 0 42px;background:radial-gradient(ellipse at 80% 30%,rgba(237,38,56,.17),transparent 42%),#0b0d11;border-bottom:1px solid var(--line)}
+.page-hero h1{font-size:clamp(42px,7vw,76px);margin:16px 0}
+.page-content{padding:55px 0 90px}
+.page-panel{padding:clamp(24px,5vw,52px);background:linear-gradient(145deg,#171a20,#0d0f13);border:1px solid var(--line);border-left:4px solid var(--red)}
+.page-panel h2{font-size:clamp(27px,4vw,42px);text-transform:uppercase;letter-spacing:-.04em;margin:0 0 14px}
+.page-panel p{max-width:760px;color:var(--muted);line-height:1.8}
+.roster-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e6e8ed;margin:30px 0 13px}
+.page-panel .player-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.page-panel .player-list span{padding:14px;font-size:12px}
+@media(max-width:760px){.nav-dropdown{width:100%}.dropdown-menu{position:static;margin-top:8px;box-shadow:none}.page-panel .player-list{grid-template-columns:repeat(2,minmax(0,1fr))}.page-content{padding:35px 0 60px}}
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="#top" aria-label="KB home"><span class="mark">KB</span><span>KB<small>ESPORTS ORGANISATION</small></span></a>
-<nav class="links" id="navlinks" aria-label="Main navigation"><a href="#about">ABOUT</a><a href="#community">COMMUNITY</a><a href="#roster">ROSTER</a><a href="#teams">TEAMS</a><a href="#tournaments">TOURNAMENTS</a><a href="#apply">APPLY</a><a href="#faq">FAQ</a></nav>
+<nav class="links" id="navlinks" aria-label="Main navigation"><a href="#about">ABOUT</a><a href="#community">COMMUNITY</a><a href="#roster">ROSTER</a><details class="nav-dropdown"><summary>TEAMS</summary><div class="dropdown-menu"><a href="upper-moons.html">KB UPPER MOONS</a><a href="groundwarriors.html">THE GROUNDWARRIORS</a></div></details><a href="tournaments.html">TOURNAMENTS</a><a href="#apply">APPLY</a><a href="#faq">FAQ</a></nav>
 <a class="nav-cta" href="https://discord.gg/8PypHdkpE2" target="_blank" rel="noopener">JOIN THE DISCORD ↗</a>
 <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
 </div></header>
@@ -78,25 +96,13 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:#7e8590;font-size:1
 <article class="tile"><div class="num">02 — SHOW YOUR GAME</div><h3>Clips & highlights</h3><p>Share your best plays, clean mechanics and moments worth watching.</p></article>
 <article class="tile"><div class="num">03 — LEVEL UP</div><h3>Improve together</h3><p>Swap tips, discuss mechanics and learn from other players.</p></article>
 </div></div></section>
-<section class="roster" id="roster"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / The players</div><h2>KB roster.</h2></div><p>21 players. Two independent competitive squads. Explore each team's own section below.</p></div>
+<section class="roster" id="roster"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / The players</div><h2>KB roster.</h2></div><p>Explore the two official KB squads on their own dedicated team pages.</p></div>
 <div class="grid">
-<article class="tile"><div class="num">11 PLAYERS</div><h3>🌓 KB Upper Moons 🧨</h3><p>Meet the Upper Moons squad and view its full player roster.</p><a class="tag" href="#upper-moons">VIEW TEAM ↓</a></article>
-<article class="tile"><div class="num">10 PLAYERS</div><h3>⚔️ The Groundwarriors</h3><p>Meet the Groundwarriors squad and view its full player roster.</p><a class="tag" href="#groundwarriors">VIEW TEAM ↓</a></article>
+<article class="tile"><div class="num">11 PLAYERS</div><h3>🌓 KB Upper Moons 🧨</h3><p>Meet the Upper Moons squad and view its full player roster.</p><a class="tag" href="upper-moons.html">VIEW TEAM ↓</a></article>
+<article class="tile"><div class="num">10 PLAYERS</div><h3>⚔️ The Groundwarriors</h3><p>Meet the Groundwarriors squad and view its full player roster.</p><a class="tag" href="groundwarriors.html">VIEW TEAM ↓</a></article>
 <article class="tile"><div class="num">RECRUITMENT OPEN</div><h3>Make your mark.</h3><p>Want to compete for KB? Apply and complete the required player trials.</p><a class="tag" href="#apply">APPLY TO KB ↓</a></article>
 </div></div></section>
 
-
-<section id="teams"><div class="wrap"><div class="section-head"><div><div class="kicker">04 / Competitive squads</div><h2>Our teams.</h2></div><p>Two separate competitive teams under one KB organisation, each with its own squad and identity.</p></div></div></section>
-<section class="team-showcase" id="upper-moons"><div class="wrap"><div class="team-detail"><span class="region">Competitive squad • 11 players</span><h2>🌓 KB Upper Moons 🧨</h2><p>One of KB's two independent competitive teams. International recruitment is open and new players must complete trials. Captain appointments will be announced by KB management.</p><div class="team-meta"><span>INTERNATIONAL RECRUITMENT</span><span>TRIALS REQUIRED</span><span>CAPTAIN TO BE APPOINTED</span></div><h3 class="roster-label">Official player roster</h3><div class="player-list"><span>KB DIABLO</span><span>KB XIRO</span><span>KB WUNPY</span><span>KB ZAO</span><span>KB CHOOMAH</span><span>KB REHANN</span><span>KB CALMLOSTY</span><span>KB GABE</span><span>KB vyxx</span><span>KB FORTUNE COOKIE</span><span>KB FHSN</span></div></div></div></section>
-<section class="team-showcase team-alt" id="groundwarriors"><div class="wrap"><div class="team-detail"><span class="region">Competitive squad • 10 players</span><h2>⚔️ The Groundwarriors</h2><p>KB's second independent competitive team. International recruitment is open and new players must complete trials. Captain appointments will be announced by KB management.</p><div class="team-meta"><span>INTERNATIONAL RECRUITMENT</span><span>TRIALS REQUIRED</span><span>CAPTAIN TO BE APPOINTED</span></div><h3 class="roster-label">Official player roster</h3><div class="player-list"><span>KB ROX</span><span>KB KBIRD</span><span>KB BIGB</span><span>KB RAZII</span><span>KB GHOSTY</span><span>KB ANNA</span><span>KB IMMORTAL</span><span>KB VALEN</span><span>KB DEVV</span><span>KB SHORT FUSE</span></div></div></div></section>
-<section id="tournaments" class="about"><div class="wrap"><div class="section-head"><div><div class="kicker">05 / Competitive events</div><h2>KB tournaments.</h2></div><p>A home for organised competitions, match results and championship moments. Event dates and sign-ups will be announced officially in Discord.</p></div>
-<div class="tournament-grid">
-<article class="tournament-card"><div class="num">01 — SOLO COMPETITION</div><h3>1v1 Championships</h3><p>Individual competition where players battle through a knockout or group-stage format.</p></article>
-<article class="tournament-card"><div class="num">02 — DUO COMPETITION</div><h3>2v2 Championships</h3><p>Team up, build chemistry and compete as a duo in organised brackets.</p></article>
-<article class="tournament-card"><div class="num">03 — TEAM EVENTS</div><h3>KB Team Showdowns</h3><p>Special events featuring the Upper Moons and Groundwarriors, with match results recorded.</p></article>
-</div>
-<div class="tournament-notice"><div><strong>THE NEXT KB EVENT</strong><p>No event date has been announced yet. Follow the official Discord for tournament announcements, registration and fixtures.</p></div><a class="btn" href="https://discord.gg/8PypHdkpE2" target="_blank" rel="noopener">TOURNAMENT UPDATES ↗</a></div>
-</div></section>
 
 <section class="apply-section" id="apply"><div class="wrap apply-shell">
 <div class="apply-intro"><div class="kicker">06 / Recruitment</div><h2>Think you've got what it takes?</h2><p>Put your name forward for KB. Tell us a little about your Sideswipe game and we'll give you the next steps in Discord.</p><div class="apply-points"><div class="apply-point"><b>01</b> Quick application — four questions</div><div class="apply-point"><b>02</b> Tell us your rank and main mode</div><div class="apply-point"><b>03</b> Join the Discord and introduce yourself</div></div></div>

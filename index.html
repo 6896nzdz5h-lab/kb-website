@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090909">
-<meta name="description" content="KB — Rocket League Sideswipe community. Find teammates, join events and show your mechanics.">
-<title>KB — Sideswipe Community</title>
+<meta name="description" content="KB Esports — a Rocket League Sideswipe organisation with two competitive teams, player recruitment and tournaments.">
+<title>KB Esports — Rocket League Sideswipe</title>
 <style>
 :root{--bg:#08090b;--panel:#111317;--panel2:#171a20;--red:#ed2638;--red2:#ff5360;--text:#f5f6f8;--muted:#9da3ad;--line:rgba(255,255,255,.09);--max:1160px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
@@ -20,24 +20,42 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:#7e8590;font-size:1
 .apply-intro{position:sticky;top:110px}.apply-intro h2{font-size:clamp(38px,5vw,58px);line-height:.98;letter-spacing:-.06em;text-transform:uppercase;margin:13px 0 18px}.apply-intro p{color:var(--muted);font-size:14px;max-width:360px}.apply-points{display:grid;gap:12px;margin-top:28px}.apply-point{display:flex;gap:12px;align-items:center;color:#c5cad2;font-size:12px}.apply-point b{display:grid;place-items:center;width:28px;height:28px;background:rgba(237,38,56,.13);border:1px solid rgba(237,38,56,.35);color:var(--red2);font-size:11px}
 .apply-form{padding:clamp(20px,4vw,34px);background:linear-gradient(145deg,#171a20,#101216);border:1px solid rgba(255,255,255,.11);box-shadow:0 20px 70px rgba(0,0,0,.25)}.form-top{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:25px}.form-top strong{font-size:14px;text-transform:uppercase;letter-spacing:.08em}.form-top span{color:var(--red2);font-size:10px;font-weight:900;letter-spacing:.14em}.question{padding:17px 0;border-top:1px solid var(--line)}.question label{display:block;font-size:12px;font-weight:850;letter-spacing:.04em;margin-bottom:10px}.question label em{color:var(--red2);font-style:normal;margin-right:9px}.question input,.question select{width:100%;background:#090b0e;border:1px solid rgba(255,255,255,.13);border-radius:2px;padding:14px;color:white;font:inherit;font-size:13px;outline:none}.question input:focus,.question select:focus{border-color:var(--red)}.question input::placeholder{color:#737b87}.apply-submit{width:100%;border:0;cursor:pointer;margin-top:12px;padding:16px;background:var(--red);color:white;font-size:12px;font-weight:950;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(0 0,100% 0,100% 78%,96% 100%,0 100%)}.apply-submit:hover{background:var(--red2)}.form-result{display:none;margin-top:16px;padding:15px;background:#0a0c10;border:1px solid rgba(237,38,56,.45);color:#dce0e7;font-size:12px}.form-result.show{display:block}.form-result strong{display:block;color:white;margin-bottom:5px}.form-result a{color:var(--red2);text-decoration:underline}.form-hint{color:#858c97;font-size:10px;margin:12px 0 0}
 
+
+.team-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.team-detail{background:linear-gradient(145deg,#171a20,#0d0f13);border:1px solid var(--line);padding:26px;position:relative;overflow:hidden}
+.team-detail:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--red)}
+.team-detail h3{font-size:25px;text-transform:uppercase;margin:10px 0}
+.team-detail p{color:var(--muted);font-size:13px}
+.team-meta{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.team-meta span{padding:6px 9px;background:#090b0e;border:1px solid var(--line);font-size:10px;font-weight:850;color:#d5d9df;letter-spacing:.08em}
+.team-detail .player-list{margin-top:18px}
+.tournament-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tournament-card{padding:25px;background:linear-gradient(145deg,#171a20,#101216);border:1px solid var(--line)}
+.tournament-card .num{color:var(--red2);font-size:10px;font-weight:950;letter-spacing:.18em}
+.tournament-card h3{font-size:19px;text-transform:uppercase;margin:14px 0 8px}
+.tournament-card p{font-size:13px;color:var(--muted);margin:0}
+.tournament-notice{margin-top:18px;padding:22px;border:1px solid rgba(237,38,56,.35);background:rgba(237,38,56,.07);display:flex;justify-content:space-between;align-items:center;gap:20px}
+.tournament-notice p{margin:5px 0 0;color:#b9bec7;font-size:12px}
+@media(max-width:760px){.team-detail-grid,.tournament-grid{grid-template-columns:1fr}.tournament-notice{align-items:flex-start;flex-direction:column}}
+
 @media(max-width:760px){.links{display:none;position:absolute;top:76px;left:0;right:0;padding:22px 20px 26px;background:#0b0c0f;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}.links.open{display:flex}.nav-cta{display:none}.menu{display:block}.hero{min-height:590px}.hero-inner{padding:80px 0}.hero:after{right:-10%;top:70%;font-size:250px}.lead{font-size:15px}.hero-note{gap:12px;flex-wrap:wrap}.section-head{display:block}.section-head p{margin-top:16px}.grid{grid-template-columns:1fr}.roster-groups{grid-template-columns:1fr}.player-list{grid-template-columns:repeat(2,minmax(0,1fr))}.recruit-card{grid-column:auto}.tile{min-height:180px}.about-grid{grid-template-columns:1fr;gap:28px}.apply-shell{grid-template-columns:1fr;gap:25px}.apply-intro{position:static}.statrow{gap:7px}.stat strong{font-size:22px}.faq-list{grid-template-columns:1fr}section{padding:70px 0}.foot{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
-<a class="brand" href="#top" aria-label="KB home"><span class="mark">KB</span><span>KB<small>SIDESWIPE COMMUNITY</small></span></a>
-<nav class="links" id="navlinks" aria-label="Main navigation"><a href="#about">ABOUT</a><a href="#community">COMMUNITY</a><a href="#roster">ROSTER</a><a href="#apply">APPLY</a><a href="#faq">FAQ</a></nav>
+<a class="brand" href="#top" aria-label="KB home"><span class="mark">KB</span><span>KB<small>ESPORTS ORGANISATION</small></span></a>
+<nav class="links" id="navlinks" aria-label="Main navigation"><a href="#about">ABOUT</a><a href="#community">COMMUNITY</a><a href="#roster">ROSTER</a><a href="#teams">TEAMS</a><a href="#tournaments">TOURNAMENTS</a><a href="#apply">APPLY</a><a href="#faq">FAQ</a></nav>
 <a class="nav-cta" href="https://discord.gg/8PypHdkpE2" target="_blank" rel="noopener">JOIN THE DISCORD ↗</a>
 <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
 </div></header>
 <main id="top">
 <section class="hero"><div class="wrap"><div class="hero-inner">
-<div class="eyebrow">Rocket League Sideswipe • Community</div>
+<div class="eyebrow">Rocket League Sideswipe • Esports Organisation</div>
 <h1>PLAY<br>WITH <span>PURPOSE.</span></h1>
-<p class="lead">Welcome to KB. A Sideswipe community built around competition, improvement and good teammates. Find your people, sharpen your game and get involved.</p>
+<p class="lead">KB is a competitive Rocket League Sideswipe organisation with two teams, international recruitment and a focus on improving through competition.</p>
 <div class="actions"><a class="btn" href="https://discord.gg/8PypHdkpE2" target="_blank" rel="noopener">JOIN KB DISCORD <span>↗</span></a><a class="btn ghost" href="#community">EXPLORE THE COMMUNITY ↓</a></div>
-<div class="hero-note"><span><b>01</b> Community</span><span><b>02</b> Competition</span><span><b>03</b> Improvement</span></div>
+<div class="hero-note"><span><b>01</b> Two teams</span><span><b>02</b> Competition</span><span><b>03</b> International</div>
 </div></div></section>
 <section id="about" class="about"><div class="wrap about-grid">
 <div class="about-copy"><div class="kicker">01 / Who we are</div><h2 style="font-size:clamp(36px,5vw,58px);line-height:1;letter-spacing:-.06em;text-transform:uppercase;margin:13px 0 20px">MORE THAN<br>A MATCH.</h2><p>KB brings Sideswipe players together. Whether you're pushing rank, learning new mechanics, looking for a teammate or sharing clips, this is a place to get involved and make your mark.</p><div class="statrow"><div class="stat"><strong>KB</strong><span>One community</span></div><div class="stat"><strong>2v2</strong><span>Team up</span></div><div class="stat"><strong>GG</strong><span>Good games</span></div></div></div>
@@ -49,15 +67,30 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:#7e8590;font-size:1
 <article class="tile"><div class="num">02 — SHOW YOUR GAME</div><h3>Clips & highlights</h3><p>Share your best plays, clean mechanics and moments worth watching.</p></article>
 <article class="tile"><div class="num">03 — LEVEL UP</div><h3>Improve together</h3><p>Swap tips, discuss mechanics and learn from other players.</p></article>
 </div></div></section>
-<section class="roster" id="roster"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / The players</div><h2>KB roster.</h2></div><p>Roster details and recruitment updates will be shared through the official Discord.</p></div>
+<section class="roster" id="roster"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / The players</div><h2>KB roster.</h2></div><p>Meet the official KB players across our two independent competitive teams.</p></div>
 <div class="roster-groups">
 <article class="roster-card team-card"><span class="region">🏆 Official KB roster</span><h3>🌓 KB Upper Moons 🧨</h3><div class="player-list"><span>KB DIABLO</span><span>KB XIRO</span><span>KB WUNPY</span><span>KB ZAO</span><span>KB CHOOMAH</span><span>KB REHANN</span><span>KB CALMLOSTY</span><span>KB GABE</span><span>KB vyxx</span><span>KB FORTUNE COOKIE</span><span>KB FHSN</span></div></article>
 <article class="roster-card team-card"><span class="region">⚔️ Official KB roster</span><h3>⚔️ The Groundwarriors</h3><div class="player-list"><span>KB ROX</span><span>KB KBIRD</span><span>KB BIGB</span><span>KB RAZII</span><span>KB GHOSTY</span><span>KB ANNA</span><span>KB IMMORTAL</span><span>KB VALEN</span><span>KB DEVV</span><span>KB SHORT FUSE</span></div></article>
 <article class="roster-card recruit-card"><span class="region">OPEN • Recruitment</span><h3>Make your mark.</h3><p>Want to join the team? Complete the player application and introduce yourself in the official KB Discord.</p><a class="tag" href="#apply">APPLY TO KB ↓</a> <a class="tag" href="https://discord.gg/8PypHdkpE2" target="_blank" rel="noopener">JOIN DISCORD ↗</a></article>
 </div></div></section>
 
+
+<section id="teams"><div class="wrap"><div class="section-head"><div><div class="kicker">04 / Competitive squads</div><h2>Meet the teams.</h2></div><p>Two separate KB teams under one organisation. Both can recruit internationally, with trials required for new players.</p></div>
+<div class="team-detail-grid">
+<article class="team-detail"><span class="region">Competitive squad • 11 players</span><h3>🌓 KB Upper Moons 🧨</h3><p>One of KB's two independent competitive teams. Team leadership and captain appointments will be announced by KB management.</p><div class="team-meta"><span>INTERNATIONAL RECRUITMENT</span><span>TRIALS REQUIRED</span><span>CAPTAIN TO BE APPOINTED</span></div><div class="player-list"><span>KB DIABLO</span><span>KB XIRO</span><span>KB WUNPY</span><span>KB ZAO</span><span>KB CHOOMAH</span><span>KB REHANN</span><span>KB CALMLOSTY</span><span>KB GABE</span><span>KB vyxx</span><span>KB FORTUNE COOKIE</span><span>KB FHSN</span></div></article>
+<article class="team-detail"><span class="region">Competitive squad • 10 players</span><h3>⚔️ The Groundwarriors</h3><p>KB's second independent competitive team. Team leadership and captain appointments will be announced by KB management.</p><div class="team-meta"><span>INTERNATIONAL RECRUITMENT</span><span>TRIALS REQUIRED</span><span>CAPTAIN TO BE APPOINTED</span></div><div class="player-list"><span>KB ROX</span><span>KB KBIRD</span><span>KB BIGB</span><span>KB RAZII</span><span>KB GHOSTY</span><span>KB ANNA</span><span>KB IMMORTAL</span><span>KB VALEN</span><span>KB DEVV</span><span>KB SHORT FUSE</span></div></article>
+</div></div></section>
+<section id="tournaments" class="about"><div class="wrap"><div class="section-head"><div><div class="kicker">05 / Competitive events</div><h2>KB tournaments.</h2></div><p>A home for organised competitions, match results and championship moments. Event dates and sign-ups will be announced officially in Discord.</p></div>
+<div class="tournament-grid">
+<article class="tournament-card"><div class="num">01 — SOLO COMPETITION</div><h3>1v1 Championships</h3><p>Individual competition where players battle through a knockout or group-stage format.</p></article>
+<article class="tournament-card"><div class="num">02 — DUO COMPETITION</div><h3>2v2 Championships</h3><p>Team up, build chemistry and compete as a duo in organised brackets.</p></article>
+<article class="tournament-card"><div class="num">03 — TEAM EVENTS</div><h3>KB Team Showdowns</h3><p>Special events featuring the Upper Moons and Groundwarriors, with match results recorded.</p></article>
+</div>
+<div class="tournament-notice"><div><strong>THE NEXT KB EVENT</strong><p>No event date has been announced yet. Follow the official Discord for tournament announcements, registration and fixtures.</p></div><a class="btn" href="https://discord.gg/8PypHdkpE2" target="_blank" rel="noopener">TOURNAMENT UPDATES ↗</a></div>
+</div></section>
+
 <section class="apply-section" id="apply"><div class="wrap apply-shell">
-<div class="apply-intro"><div class="kicker">04 / Recruitment</div><h2>Think you've got what it takes?</h2><p>Put your name forward for KB. Tell us a little about your Sideswipe game and we'll give you the next steps in Discord.</p><div class="apply-points"><div class="apply-point"><b>01</b> Quick application — four questions</div><div class="apply-point"><b>02</b> Tell us your rank and main mode</div><div class="apply-point"><b>03</b> Join the Discord and introduce yourself</div></div></div>
+<div class="apply-intro"><div class="kicker">06 / Recruitment</div><h2>Think you've got what it takes?</h2><p>Put your name forward for KB. Tell us a little about your Sideswipe game and we'll give you the next steps in Discord.</p><div class="apply-points"><div class="apply-point"><b>01</b> Quick application — four questions</div><div class="apply-point"><b>02</b> Tell us your rank and main mode</div><div class="apply-point"><b>03</b> Join the Discord and introduce yourself</div></div></div>
 <form class="apply-form" id="kbApply">
 <div class="form-top"><strong>KB player application</strong><span>APPLICATIONS OPEN</span></div>
 <div class="question"><label for="playerName"><em>01</em> What's your in-game name?</label><input id="playerName" name="playerName" maxlength="32" placeholder="Your Sideswipe name" required></div>
@@ -71,7 +104,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:#7e8590;font-size:1
 </div></section>
 
 <section class="join"><div class="wrap"><div class="kicker">Your next game starts here</div><h2>Ready to join KB?</h2><p>Get connected with the community, find teammates and be part of what's next for KB Sideswipe.</p><a class="btn" href="https://discord.gg/8PypHdkpE2" target="_blank" rel="noopener">ENTER THE DISCORD ↗</a></div></section>
-<section id="faq"><div class="wrap"><div class="section-head"><div><div class="kicker">04 / Quick answers</div><h2>FAQ.</h2></div></div><div class="faq-list">
+<section id="faq"><div class="wrap"><div class="section-head"><div><div class="kicker">07 / Quick answers</div><h2>FAQ.</h2></div></div><div class="faq-list">
 <div class="faq"><h3>What is KB?</h3><p>KB is a Rocket League Sideswipe community for players to connect, compete and improve.</p></div>
 <div class="faq"><h3>How do I join?</h3><p>Use any of the Discord invite links on this website to join the server.</p></div>
 <div class="faq"><h3>Can I find a teammate?</h3><p>Yes. Join the Discord and use the community channels to meet players and find a duo.</p></div>
